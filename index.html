@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>login form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=cinzel" rel="stylesheet">
+<script language="javascript">
+function validateRegister(objReg){
+
+if(objReg.ccid.value.length==0){
+		alert("Please enter Customer ID!");
+		objReg.ccid.focus();
+		return false;
+		}
+var z = objReg.ccid.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\d+/))
+	        {
+	        alert("Please  enter only numeric characters  for your Customer ID number! (Allowed input:0-9)")
+	        objReg.ccid.focus();
+			return false;
+
+		}
+
+	if(objReg.ccfname.value.length==0){
+		alert("Please enter Customer Name!");
+		objReg.ccfname.focus();
+		return false;
+		}
+	if(objReg.cclname.value.length==0){
+		alert("Please enter Customer Name!");
+		objReg.cclname.focus();
+		return false;
+		}
+	if(objReg.ccmobile.value.length==0){
+		alert("Please enter phoneNo !");
+		objReg.ccmobile.focus();
+		return false;
+		}
+
+		var z = objReg.ccmobile.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\d+/))
+	        {
+	        alert("Please  enter only numeric characters  for your phone number! (Allowed input:0-9)")
+	        objReg.ccmobile.focus();
+			return false;
+
+		}
+	    var z = objReg.ccmobile.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
+	        {
+	        alert("Please  enter 10 digit correct number for your phone number! (Allowed input:0-9)")
+	        objReg.ccmobile.focus();
+			return false;
+
+		}
+
+	if(objReg.ccemail.value.length==0){
+		alert("Please enter passenger email !");
+		objReg.ccemail.focus();
+		return false;
+		}
+	var z = objReg.ccemail.value;
+	//alert("the z"+z);
+    if(!z.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+        {
+        alert("Please  enter valid EMAIL ID")
+        objReg.ccmobile.focus();
+		return false;
+
+	}
+	if(objReg.ccaddress.value.length==0){
+		alert("Please enter Address of Customer !");
+		objReg.ccaddress.focus();
+		return false;
+		}
+
+	return true;
+}
+</script>
+</head>
+<body>
+<div class="bgimg">
+<div class="centerdiv">
+<img src="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-128.png">
+<form name="UserForm" method="get" action="insert.php">
+
+<center>
+
+<label>Customer Details</label>
+</center>
+<label for="usrid">Customer Id:</label><BR>
+    <input type="text" name="ccid" maxlength="30" size="30" value=""placeholder="CUSTOMER ID"><BR><BR>
+
+    <label for="usrname">Customer Name:</label><BR>
+ <input type="text" name="ccfname" maxlength="30" size="30" value=""placeholder="FIRST NAME"><BR>
+
+    <label for="psw"></label><BR>
+<input type="text" name="cclname" maxlength="30" size="30" value=""placeholder="LAST NAME"><BR><BR>
+<label for="usrnum">Customer Mobile number:</label><BR>
+<input type="text" name="ccmobile" maxlength="30" size="30" value=""placeholder="MOBILE NUMBER"><BR><BR>
+<label for="usremail">Customer Email ID:</label><BR>
+<input type="text" name="ccemail" maxlength="30" size="30" value=""placeholder="EMAIL ID"><BR><BR>
+<label for="usradd">Address:</label><BR>
+<textarea class="__message-area" id="feedbackMessage" name="ccaddress" placeholder="ADDRESS" autocomplete="off" rows="10"
+
+cols="32"></textarea><BR><BR>
+
+    <input type="submit" value="Submit">
+
+
+</form>
+</div>
+</div>
+</body>
+</html>
