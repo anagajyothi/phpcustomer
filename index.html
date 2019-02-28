@@ -3,7 +3,7 @@
 <head>
 
 <script language="javascript">
-function validateRegister(objReg){
+function validateForm(objReg){
 if(objReg.cid.value.length==0){
 		alert("Please enter Customer ID!");
 		objReg.cid.focus();
@@ -87,7 +87,7 @@ var z = objReg.cid.value;
 </center>
 
 
-<form name="UserForm" action="insert.php" onsubmit="return validateRegister(this)" method="post">
+<form name="UserForm" action="insert.php" onsubmit="return validateForm()" method="post">
 
 <center>
 
